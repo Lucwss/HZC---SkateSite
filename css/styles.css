@@ -1,0 +1,472 @@
+@font-face {
+  font-family: 'icones';
+  src: url(../font/icones.ttf);
+}
+
+
+body {
+    background-color: var(--cinza-escuro);
+    font-family: var(--OpenSans), var(--SansSerif), var(--icons);
+    color: var(--branco);
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cinza-super-escuro);
+    box-shadow: 0 4px 5px var(--sombra);
+    padding: .5rem 1rem;
+}
+
+.header-image {
+    width: 2.5rem;
+}
+
+.header-menu span::before {
+    content: "\e904";
+    font-size: 1.5rem;
+}
+
+.header-notification span::before {
+    content: "\e906";
+    font-size: 1.5rem;
+}
+
+.header-profile {
+    display: none;
+}
+
+@media screen and (min-width: 1440px) {
+    .header {
+        background-color: var(--cinza-escuro);
+        display: grid;
+        column-gap: 2rem;
+        grid-template-columns: 1fr auto;
+        padding: 1rem 3.75rem;
+        height: 5rem;
+        box-sizing: border-box;
+        grid-column: 2;
+    }
+
+    .header-menu, .header-logo-link {
+        display: none;
+
+    }
+
+    .header-profile {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 0.5rem;
+        align-items: center;
+        justify-self: flex-end;
+        color: var(--cinza);
+        padding: .5rem 2rem;
+        border-right: 1px solid var(--cinza);
+    }
+
+    .header-profile::before {
+        content: "";
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background-image: url(../img/profile_2.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .header-profile::after {
+        content: "\e90d";
+        color: var(--branco);
+        font-size: 1.5rem;
+    }
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cinza-super-escuro);
+    width: 75vw;
+    height: 100vh;
+
+    position: absolute;
+    left: -100vw;
+    transition: 0.25s;
+
+}
+
+.side-menu-appear {
+    left: 0;
+    transition: .25s;
+}
+
+.side-menu-logo {
+    width: 7.3rem;
+    align-self: center;
+    padding: 1rem;
+}
+
+.side-menu-link {
+    height: 4rem;
+    color: var(--cinza);
+    align-self: flex-start;
+    padding-left: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu-link:hover, .side-menu-link:active {
+    border-left: 8px solid var(--branco);
+    color: var(--branco);
+    padding-left: 3.5rem;
+}
+
+
+.side-menu-link.beginning::before {
+    content: "\e902";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 0.6rem;
+
+}
+
+.side-menu-link.videos::before {
+    content: "\e90e";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 0.6rem;
+}
+
+
+.side-menu-link.peaks::before {
+    content: "\e909";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 0.6rem;
+}
+
+.side-menu-link.members::before {
+    content: "\e903";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 0.6rem;
+}
+
+
+.side-menu-link.shirts::before {
+    content: "\e900";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 0.6rem;
+}
+
+
+.side-menu-link.paintings::before {
+    content: "\e90a";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    left: 1.5rem;
+    padding-top: 0.6rem;
+}
+
+@media screen and (min-width: 1440px) {
+    .side-menu {
+        position: static;
+        width: 200px;
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+}
+
+
+.main {
+    padding: 1.5rem 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 1440px) {
+    .main {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-areas: 
+            "tittle-page tittle-page tittle-page"
+            "card-highlight-different-video card-highlight-different-video recent-videos"
+            "section-videos section-videos section-videos"
+            "recent-products card-product card-product"
+            "section-shirts section-shirts section-shirts"
+        
+        ;
+        column-gap: 2rem;
+        padding: 1rem 3.75rem;
+        grid-column: 2;
+    }
+
+    .tittle-page {
+        grid-column: 1 / span 3;
+    }
+
+    .card.card-highlight-different {
+        grid-column: 1/ span 2;
+    }
+
+    .card.recent-card {
+        grid-column: 3;
+    }
+
+    .section-tittle {
+        grid-column: span 4;
+    }
+}
+
+.tittle-page {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.section-tittle {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--cinza-meio-claro);
+}
+
+.card-highlight {
+  grid-column: span 2;
+}
+
+.card-highlight-different {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.image-card-desktop {
+    display: none;
+}
+
+
+.content-card {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    /*row-gap
+    column-gap*/
+}
+
+.card-tittle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    grid-column: span 2;
+}
+
+.card-tittle-bottomspace {
+    margin-bottom: 1rem;
+}
+
+.card-profile {
+    color: var(--cinza);
+    font-size: 0.9rem;
+    grid-column: span 2;
+}
+
+.card-info {
+    display: flex;
+    align-items: center;
+    color: var(--cinza);
+}
+
+.card-info-time::before {
+    content: "\e90c";
+    margin-right: .5rem;
+}
+
+.card-info-price::before {
+  content: '\e905';
+  margin-right: 0.5rem;
+}
+
+
+.card-info-view::before {
+    content: '\e90f';
+    margin-right: 0.5rem;
+}
+
+.card-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--azul-links);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    justify-self: flex-end;
+}
+
+.card-button-play::before {
+    content: "\e90b";
+    font-size: 24px;
+}
+
+.card-button-buy::before {
+  content: '\e901';
+  font-size: 24px;
+}
+
+
+.card-button-highlight {
+    width: 100%;
+    grid-column: span 2;
+}
+
+.card-button-highlight::before {
+    margin-right: 8px;
+}
+
+.section {
+    display: grid;
+    gap: 1rem;
+}
+
+@media  (min-width: 1440px) {
+    .section {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.img-card-2 {
+    height: 22rem;
+}
+
+.recent-card {
+    display: none;
+}
+
+@media (min-width: 1440px) {
+
+    .card-highlight-different {
+        margin-bottom: 0;
+    }
+
+    .card-button-highlight {
+        grid-column: auto;
+        padding: 16px 8px;
+    }
+
+    .image-card-mobile {
+        display: none;
+    }
+
+    
+    .image-card-desktop {
+        display: block;
+    }
+
+
+    .recent-card {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        align-items: center;
+        row-gap: 1.5rem;
+        width: 256px;
+        padding: 1rem;
+        box-sizing: border-box;
+        align-self: flex-start;
+    }
+
+    .recent-card .card-tittle {
+        grid-column: auto;
+    }
+
+    .card-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--azul-links);
+        justify-self: flex-end;
+    }
+
+    .card-list {
+        display: grid;
+        row-gap: 1rem;
+        grid-column: span 2;
+    }
+
+    .card-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem;
+    }
+
+    .card-item-thumbnail {
+        width: 32px;
+        grid-row: span 2;
+    }
+
+    .card-item-tittle {
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+        font-weight: 700;
+    }
+
+    .card-item-perfil {
+        font-size: 0.8rem;
+        color: var(--cinza);
+    }
+
+    .card-highlight-different-video {
+        grid-area: card-highlight-different-video;
+    }
+
+    .recent-videos {
+        grid-area: recent-videos;
+    }
+
+    .section-videos {
+        grid-area: section-videos;
+    }
+
+    .section-shirts {
+        grid-area: section-shirts;
+    }
+
+    .card-product {
+        grid-area: card-product;
+    }
+
+    .recent-products {
+        grid-area: recent-products;
+    }
+
+
+}
+
+
+
+
+

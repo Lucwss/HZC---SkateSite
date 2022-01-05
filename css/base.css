@@ -1,0 +1,25 @@
+:root {
+
+    --cinza-escuro: #1D232A;
+
+    --cinza-super-escuro: #15191C;
+
+    --cinza-meio-claro: #2C343A;
+
+    --branco: #FFFFFF;
+
+    --cinza: #95999C;
+
+    --azul-links: #0480DC;
+
+    --preto: #000000;
+
+    --sombra: rgba(0, 0, 0, 0.16);
+
+    --OpenSans: 'Open Sans';
+    
+    --SansSerif: sans-serif;
+
+    --icons: 'icones';
+}
+
